@@ -40,6 +40,7 @@ function areaOfATriangle(a, b, c){
 
 // Task 0.6
 function maxNumber(a,b,c) {
+
     return (a > b && a > c) ? a
     :(b > a && b > c) ? b
     : c;
@@ -70,13 +71,24 @@ function numberToHours(int) {
 }
 
 // Task 0.9
-/*
-Write a function that takes in a string and then prints out all the vowels in the string. 
-Make sure it can deal with capital letters and small letters.
- */
 function vowels(str) {
-    let vowel = aeiouAEIOU;
-    let result;
-    
-    return result;
+
+    let vowel = /[aeiouAEIOU]/gi;
+    let output = str.match(vowel);
+
+    console.log(output.toString());
+}
+
+// Task 0.10
+function commonChar(str1, str2) {
+    let commonLet = [];
+
+    for(var i = 0; i < str1; i++){
+        for(var j = 0; j < str2; j++){
+            if(str1[i] === str2[j]) {
+                commonLet.push(str1[i])
+            }
+        }
+    }
+    return "Common letters: " + commonLet.toString();
 }
