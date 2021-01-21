@@ -39,13 +39,13 @@ function areaOfATriangle(a, b, c){
 }
 
 // Task 0.6
-function maxNumber(arr) {
+function maxNumber() {
 
     let maxNumber = 0;
 
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] > maxNumber){
-            maxNumber = arr[i]
+    for(var i = 0; i < arguments.length; i++){
+        if(arguments[i] > maxNumber){
+            maxNumber = arguments[i]
         }
     }
     return maxNumber;
