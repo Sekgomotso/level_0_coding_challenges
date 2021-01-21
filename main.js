@@ -39,11 +39,16 @@ function areaOfATriangle(a, b, c){
 }
 
 // Task 0.6
-function maxNumber(a,b,c) {
+function maxNumber(arr) {
 
-    return (a > b && a > c) ? a
-    :(b > a && b > c) ? b
-    : c;
+    let maxNumber = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] > maxNumber){
+            maxNumber = arr[i]
+        }
+    }
+    return maxNumber;
 }
 
 // Task 0.7
