@@ -31,9 +31,9 @@ function evenOrOdd(int){
 // Task 0.5
 function areaOfATriangle(a, b, c){
 
-    let semiper = 0.5*(a + b + c);
+    let semiperimeter = 0.5*(a + b + c);
 
-    let area = Math.sqrt(semiper*(semiper - a)*(semiper - b)*(semiper - c)); // Heron's formula
+    let area = Math.sqrt(semiperimeter*(semiperimeter - a)*(semiperimeter - b)*(semiperimeter - c)); // Heron's formula
 
     return area;
 }
@@ -52,17 +52,15 @@ function maxNumber() {
 }
 
 // Task 0.7
-// celsius to fahrenheit
-function fahrenheit(cel){
+function celsiusToFahrenheit(celsius){
 
-    return (cel/5) * (9) + 32;
+    return (celsius/5) * (9) + 32;
 
 }
 
-// fahrenheit to celsius
-function celsius(fah) {
+function fahrenheitToCelsius(fahrenheit) {
     
-    return (fah - 32) * (5) / 9;
+    return (fahrenheit - 32) * (5) / 9;
 
 }
 
@@ -71,7 +69,10 @@ function numberToHours(int) {
     let hrs = Math.floor(int / 60);
     let mins = int % 60;
     
-    return (hrs <= 1) ? (hrs + " hour, " + mins + " minutes") : (hrs + " hours, " + mins + " minutes");
+    return (hrs <= 1 && mins > 11) ? (hrs + " hour, " + mins + " minutes")
+    : (hrs > 1 && mins <= 1) ? (hrs + " hours, " + mins + " minute")
+    : (hrs <= 1 && mins <= 1) ? (hrs + " hour, " + mins + " minute")
+    : (hrs + " hours, " + mins + " minutes");
     
 }
 
@@ -85,15 +86,15 @@ function vowels(str) {
 }
 
 // Task 0.10
-function commonChar(str1, str2) {
-    let commonLet = [];
+function commonChars(str1, str2) {
+    let commonLetters = [];
 
     for(var i = 0; i < str1; i++){
         for(var j = 0; j < str2; j++){
             if(str1[i] === str2[j]) {
-                commonLet.push(str1[i])
+                commonLetters.push(str1[i])
             }
         }
     }
-    return "Common letters: " + commonLet.toString();
+    return "Common letters: " + commonLetters.toString();
 }
